@@ -4,7 +4,7 @@
 alias sl=ls
 alias ls='ls -G'        # Compact view, show colors
 alias la='ls -AF'       # Compact view, show hidden
-alias ll='ls -al'
+alias ll='ls -lhrt'
 alias l='ls -a'
 alias l1='ls -1'
 
@@ -22,10 +22,6 @@ alias page="$PAGER"
 alias q="exit"
 
 alias irc="$IRC_CLIENT"
-
-# Pianobar can be found here: http://github.com/PromyLOPh/pianobar/
-
-alias piano="pianobar"
 
 alias ..='cd ..'        # Go up one directory
 alias ...='cd ../..'    # Go up two directories
@@ -60,7 +56,6 @@ function aliases-help() {
   echo "  d      = dirs -v"
   echo "  editor = $EDITOR"
   echo "  pager  = $PAGER"
-  echo "  piano  = pianobar"
   echo "  q      = exit"
   echo "  irc    = $IRC_CLIENT"
   echo 
