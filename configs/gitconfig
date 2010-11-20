@@ -12,7 +12,7 @@
     branch = auto
 [alias]
     p = !git pull origin master && git push origin master
-    pp = !git pull origin master && git push origin master && git pull origin develop && git push origin develop
+    pp = !git pull origin develop && git push origin develop
     co = checkout
     st = status
     ci = commit
