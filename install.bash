@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Assumption of directory location
-DOTBASH="$HOME/Code/Repos/dotbash"
+DOTBASH="$HOME/code/dotbash"
 
 if [[ ! -d "$DOTBASH" ]]
 then
