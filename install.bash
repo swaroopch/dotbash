@@ -17,6 +17,9 @@ then
 elif [[ "$OSTYPE" = "linux-gnu" ]] # Ubuntu
 then
     PROFILE="$HOME/.bashrc"
+else
+    echo "Don't know what to do on '$OSTYPE' operating system"
+    exit 1
 fi
 
 echo >> $PROFILE # Adding a new line for separation, in case last line does not end with a newline.
