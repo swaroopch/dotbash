@@ -22,5 +22,5 @@
     df = diff
     dfs = diff --cached
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    spull = !git-svn fetch && git-svn rebase
-    spush = !git-svn dcommit
+    spull = !git checkout master && git-svn fetch && git-svn rebase && git checkout - && git rebase master
+    spush = !git checkout master && git-svn dcommit && git checkout -
