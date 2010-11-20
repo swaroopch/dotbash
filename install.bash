@@ -14,7 +14,7 @@ fi
 if [[ "$OSTYPE" = "darwin10.0" ]] # Mac OS X
 then
     PROFILE="$HOME/.profile"
-elif [[ "$OSTYPE" == "linux-gnu" ]] # Ubuntu
+elif [[ "$OSTYPE" = "linux-gnu" ]] # Ubuntu
 then
     PROFILE="$HOME/.bashrc"
 fi
