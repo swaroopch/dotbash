@@ -30,5 +30,6 @@ echo "Setting up application-specific configs"
 ln -s "$DOTBASH/configs/tmux.conf" ~/.tmux.conf
 ln -s "$DOTBASH/configs/ackrc" ~/.ackrc
 ln -s "$DOTBASH/configs/irbrc" ~/.irbrc
+ln -s "$DOTBASH/configs/gitconfig" ~/.gitconfig
 
 echo "Finished. Open a new shell now!"

@@ -1,0 +1,26 @@
+[core]
+    whitespace = nowarn
+    pager = less
+[user]
+    name = Swaroop C H
+    email = swaroop@swaroopch.com
+[github]
+    user = swaroopch
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[alias]
+    p = !git pull origin master && git push origin master
+    pp = !git pull origin master && git push origin master && git pull origin develop && git push origin develop
+    co = checkout
+    st = status
+    ci = commit
+    ca = commit -a
+    br = branch
+    ba = branch -a
+    df = diff
+    dfs = diff --cached
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    spull = !git-svn fetch && git-svn rebase
+    spush = !git-svn dcommit
