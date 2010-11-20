@@ -22,7 +22,13 @@ else
     exit 1
 fi
 
+echo "Setting up bash profile."
 echo >> $PROFILE # Adding a new line for separation, in case last line does not end with a newline.
 echo "[ -s \"$DOTBASH/template/my_bash_profile.bash\" ] && source \"$DOTBASH/template/my_bash_profile.bash\"" >> $PROFILE
 
-echo "Finished setting up bash profile. Open a new shell now!"
+echo "Setting up application-specific configs"
+ln -s "$DOTBASH/configs/tmux.conf" ~/.tmux.conf
+ln -s "$DOTBASH/configs/ackrc" ~/.ackrc
+ln -s "$DOTBASH/configs/irbrc" ~/.irbrc
+
+echo "Finished. Open a new shell now!"
