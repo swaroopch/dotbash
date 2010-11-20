@@ -1,21 +1,39 @@
 #!/usr/bin/env bash
 
+## Check Bash Version
+
 if [ "$BASH_VERSION" = "" ]
 then
     echo "I work only with Bash"
     exit 1
 fi
 
+## Check Git is installed
+if [[ $(which git) == "" ]]
+then
+    echo "Please ensure that git is installed"
+    exit 1
+fi
+
+## Check OS
+
+if [[ "$OSTYPE" == "darwin10.0" ]]
+then
+    export OS="mac"
+elif [[ "$OSTYPE" == "linux-gnu" ]]
+then
+    export OS="linux"
+else
+    echo "Don't know what to do with '$OSTYPE' operating system"
+    exit 1
+fi
+
 # Select correct user profile script
-if [[ "$OSTYPE" == "darwin10.0" ]] # Mac OS X
+if [[ "$OS" == "mac" ]]
 then
     PROFILE="$HOME/.profile"
-elif [[ "$OSTYPE" == "linux-gnu" ]] # Ubuntu
-then
-    PROFILE="$HOME/.bashrc"
 else
-    echo "Don't know what to do on '$OSTYPE' operating system"
-    exit 1
+    PROFILE="$HOME/.bashrc"
 fi
 
 # Assumption of directory location
