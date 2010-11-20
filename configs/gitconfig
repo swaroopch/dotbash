@@ -11,8 +11,8 @@
     status = auto
     branch = auto
 [alias]
-    p = !git pull origin master && git push origin master
-    pp = !git pull origin develop && git push origin develop
+    p = !git checkout master && git pull origin master && git push origin master && git checkout -
+    pp = !git checkout develop && git pull origin develop && git push origin develop && git checkout -
     co = checkout
     st = status
     ci = commit
