@@ -5,7 +5,7 @@
 
 2. Run:
 
-    bash < <( curl https://github.com/swaroopch/dotbash/raw/develop/install.bash )
+        bash < <( curl https://github.com/swaroopch/dotbash/raw/develop/install.bash )
 
 3. Profit!
 
