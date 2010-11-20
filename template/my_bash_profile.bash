@@ -17,8 +17,8 @@ export BASH_THEME='bobby'
 export GIT_HOSTING='git@github.com:swaroopch'
 
 # Set my editor and git editor
-export EDITOR="gvim"
-export GIT_EDITOR='gvim'
+export EDITOR='vim'
+export GIT_EDITOR='vim'
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
