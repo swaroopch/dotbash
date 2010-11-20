@@ -41,7 +41,7 @@ ln -s -f "$DOTBASH/configs/ackrc" ~/.ackrc
 ln -s -f "$DOTBASH/configs/irbrc" ~/.irbrc
 ln -s -f "$DOTBASH/configs/gitconfig" ~/.gitconfig
 
-## Custom -- YOU MUST CHANGE THIS FOR YOUR OWN CUSTOM SETUP
+## XXX YOU MUST CHANGE THIS FOR YOUR OWN CUSTOM SETUP
 if [[ "$CUSTOM" == "yes" ]]
 then
     DOTBASH_CUSTOM="$HOME/code/dotbash_custom"
@@ -50,6 +50,7 @@ then
     then
         mkdir -p "$DOTBASH_CUSTOM/.."
         cd "$DOTBASH_CUSTOM/.."
+        # XXX THIS IS MY PRIVATE REPO. YOU CANNOT ACCESS THIS.
         git clone git@github.com:swaroopch/dotbash_custom.git
     else
         cd $DOTBASH
