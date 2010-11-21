@@ -54,10 +54,10 @@ echo >> $PROFILE # Adding a new line for separation, in case last line does not 
 echo "[ -s \"$DOTBASH/template/my_bash_profile.bash\" ] && source \"$DOTBASH/template/my_bash_profile.bash\"" >> $PROFILE
 
 echo "Setting up application-specific configs"
-ln -s -f "$DOTBASH/configs/tmux.conf" ~/.tmux.conf
-ln -s -f "$DOTBASH/configs/ackrc" ~/.ackrc
-ln -s -f "$DOTBASH/configs/irbrc" ~/.irbrc
-ln -s -f "$DOTBASH/configs/gitconfig" ~/.gitconfig
+ln -s -i "$DOTBASH/configs/tmux.conf" ~/.tmux.conf
+ln -s -i "$DOTBASH/configs/ackrc" ~/.ackrc
+ln -s -i "$DOTBASH/configs/irbrc" ~/.irbrc
+ln -s -i "$DOTBASH/configs/gitconfig" ~/.gitconfig
 
 ## XXX YOU MUST CHANGE THIS FOR YOUR OWN CUSTOM SETUP
 if [[ "$CUSTOM" == "yes" ]]
@@ -76,7 +76,7 @@ then
     fi
 
     echo "Setting up custom configs"
-    ln -s -f "$DOTBASH_CUSTOM/servers.bash" "$DOTBASH/custom/servers.bash"
+    ln -s -i "$DOTBASH_CUSTOM/servers.bash" "$DOTBASH/custom/servers.bash"
 fi
 
 echo "Finished. Open a new shell now!"
