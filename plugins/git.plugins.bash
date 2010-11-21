@@ -1,5 +1,10 @@
 #!/bin/bash
 
+function git_clone {
+  echo "Running: git clone ${GIT_HOSTING}/$1.git"
+  git clone $GIT_HOSTING/$1.git
+}
+
 function git_remote {
   echo "Running: git remote add origin ${GIT_HOSTING}/$1.git"
   git remote add origin $GIT_HOSTING/$1.git
