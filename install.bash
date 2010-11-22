@@ -38,16 +38,7 @@ fi
 
 # Assumption of directory location
 DOTBASH="$HOME/code/dotbash"
-
-if [[ ! -d "$DOTBASH" ]]
-then
-    mkdir -p "$DOTBASH/.."
-    cd "$DOTBASH/.."
-    git clone git@github.com:swaroopch/dotbash.git
-else
-    cd $DOTBASH
-    git pull
-fi
+cd $DOTBASH
 
 echo "Setting up bash profile."
 echo >> $PROFILE # Adding a new line for separation, in case last line does not end with a newline.

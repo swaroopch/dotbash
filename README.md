@@ -1,13 +1,20 @@
 
 # dotbash
 
-1. Ensure that `git` and `curl` commands are installed.
+if [[ "$OSTYPE" == "linux-gnu" ]]
+then
+    sudo apt-get install git curl subversion
+elif [[ "$OSTYPE" == "darwin10.0" ]]
+then
+    brew install git curl subversion
+fi
 
-2. Run:
+mkdir -p "$HOME/code/"
+cd "$HOME/code/"
 
-        bash < <( curl https://github.com/swaroopch/dotbash/raw/develop/install.bash )
+git clone git://github.com/swaroopch/dotbash.git
+cd dotbash
+bash install.bash
 
-3. Profit!
-
-This fork includes customizations for my specific setup.
-See https://github.com/revans/bash-it for the original documentation.
+echo "This fork includes customizations for my specific setup."
+echo "See https://github.com/revans/bash-it for the original documentation."
