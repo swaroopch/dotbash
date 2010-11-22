@@ -1,5 +1,7 @@
 
-# dotbash
+# My Bash setup
+
+# Installation
 
     if [[ "$OSTYPE" == "linux-gnu" ]]
     then
