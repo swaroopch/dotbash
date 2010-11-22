@@ -3,10 +3,10 @@
 
 if [[ "$OSTYPE" == "linux-gnu" ]]
 then
-    sudo apt-get install git curl subversion
+    sudo apt-get install git curl
 elif [[ "$OSTYPE" == "darwin10.0" ]]
 then
-    brew install git curl subversion
+    brew install git curl
 fi
 
 mkdir -p "$HOME/code/"
