@@ -10,6 +10,11 @@ function egg_edit
     fi
 
     module_file=$(python -c "import $module; print $module.__file__")
+    if [[ "$module_file" == "" ]]
+    then
+        return 1
+    fi
+
     module_directory=$(dirname $module_file)
     vim -c ":NERDTree $module_directory"
     # OR:
