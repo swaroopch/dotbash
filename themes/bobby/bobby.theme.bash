@@ -5,7 +5,7 @@ SCM_THEME_PROMPT_PREFIX=" |"
 SCM_THEME_PROMPT_SUFFIX="${green}|"
 
 
-PROMPT="\[${bold_blue}\]\[\$(scm_char)\]\[${green}\]\[\$(scm_prompt_info)\]\[${blue}\]\[\$(rvm_version_prompt)\] \[${orange}\]\h \[${reset_color}\]in \[${green}\]\w \[${reset_color}\]\[\n\[${green}\]→\[${reset_color}\] "
+PROMPT="\[${bold_blue}\]\[\$(scm_char)\]\[${green}\]\[\$(scm_prompt_info)\]\[${blue}\] \[${orange}\]\h \[${reset_color}\]in \[${green}\]\w \[${reset_color}\]\[\n\[${green}\]→\[${reset_color}\] "
 
 
 # git theming
