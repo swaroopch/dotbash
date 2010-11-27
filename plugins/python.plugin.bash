@@ -16,7 +16,7 @@ function egg_edit
     fi
 
     module_directory=$(dirname $module_file)
-    vim -c ":NERDTree $module_directory"
+    vim -c "cd $module_directory | :NERDTree $module_directory"
     # OR:
     #   vim -c "$module_directory"
     # for those who don't use NERDTree plugin
