@@ -10,5 +10,5 @@ function sync
         return 1
     fi
 
-    rsync -rlmhv --delete-before $from $to
+    rsync -rlmh --delete-before --copy-unsafe-links --progress --stats $from $to
 }
