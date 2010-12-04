@@ -80,7 +80,10 @@ unset MAILCHECK
 ## Get Everything
 
 # Load Bash It
-source $BASH/bash_it.sh
+if [[ "$TERM" != "dumb" ]] # To prevent tput errors when someone scps to this box
+then
+    source $BASH/bash_it.sh
+fi
 
 # Load Autojump, but by default, the installer adds to the bashrc, so we do not need to load it again.
 #AUTOJUMP_SCRIPT="/etc/profile.d/autojump.bash"
