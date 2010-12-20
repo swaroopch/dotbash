@@ -74,7 +74,7 @@ then
     fi
 
     echo "Setting up custom configs"
-    ln -s -i "$DOTBASH_CUSTOM/servers.bash" "$DOTBASH/custom/servers.bash"
+    bash "$DOTBASH_CUSTOM/install.sh"
 fi
 
 echo "Finished. Open a new shell now!"
