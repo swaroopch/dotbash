@@ -23,3 +23,4 @@
 
     echo "This fork includes customizations for my specific setup."
     echo "See https://github.com/revans/bash-it for the original documentation."
+    echo "See http://commandlinefu.com for other cool commands you can add to your bash setup."
