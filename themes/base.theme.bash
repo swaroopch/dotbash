@@ -82,3 +82,16 @@ function rvm_version_prompt {
     echo -e "$RVM_THEME_PROMPT_PREFIX$rvm$RVM_THEME_PROMPT_SUFFIX"
   fi
 }
+
+function hg_prompt_info {
+  if [[ $(hg status 2>/dev/null) ]]
+  then
+    state=${SCM_THEME_PROMPT_DIRTY}
+  else
+    state=${SCM_THEME_PROMPT_CLEAN}
+  fi
+  prefix=${SCM_THEME_PROMPT_PREFIX}
+  suffix=${SCM_THEME_PROMPT_SUFFIX}
+  ref=$(hg branch)
+  echo -e "$prefix$ref$state$suffix"
+}
