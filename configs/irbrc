@@ -7,3 +7,10 @@ require 'rubygems'
 # https://github.com/michaeldv/awesome_print
 # gem install awesome_print
 require 'ap'
+
+require 'wirble'
+Wirble.init
+Wirble.colorize
+
+require 'hirb'
+Hirb.enable
