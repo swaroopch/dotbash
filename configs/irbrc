@@ -1,3 +1,7 @@
+
+require 'irb/completion'
+require 'irb/ext/save-history'
+
 require 'rubygems'
 
 # https://github.com/michaeldv/awesome_print
