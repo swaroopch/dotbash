@@ -14,3 +14,12 @@ Wirble.colorize
 
 require 'hirb'
 Hirb.enable
+
+# Rails
+require 'logger'
+if defined?(Rails)
+    Rails.logger = Logger.new(STDOUT)
+else
+    RAILS_DEFAULT_LOGGER  = Logger.new(STDOUT)
+end
+
