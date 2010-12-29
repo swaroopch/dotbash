@@ -1,9 +1,12 @@
+
+require 'irb/completion'
+require 'irb/ext/save-history'
+
 require 'rubygems'
 
-#if ENV.include?("RAILS_ENV") && !Object.const_defined?("RAILS_DEFAULT_LOGGER")
-#  require 'logger'
-#  RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
-#end
+# https://github.com/michaeldv/awesome_print
+# gem install awesome_print
+require 'ap'
 
 require 'wirble'
 Wirble.init
@@ -11,3 +14,12 @@ Wirble.colorize
 
 require 'hirb'
 Hirb.enable
+
+# Rails
+require 'logger'
+if defined?(Rails)
+    Rails.logger = Logger.new(STDOUT)
+else
+    RAILS_DEFAULT_LOGGER  = Logger.new(STDOUT)
+end
+

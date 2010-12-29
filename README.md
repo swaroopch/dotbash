@@ -3,12 +3,15 @@
 
 # Installation
 
-    if [[ "$OSTYPE" == "linux-gnu" ]]
+    if [[ "$OSTYPE" =~ "linux" ]] # Assumes Ubuntu
     then
         sudo apt-get install git curl
-    elif [[ "$OSTYPE" == "darwin10.0" ]]
+    elif [[ "$OSTYPE" =~ "darwin" ]]
     then
         brew install git curl
+    else
+        echo "Don't know how to install packages on $OSTYPE operating system"
+        exit 1
     fi
 
     mkdir -p "$HOME/code/"
@@ -20,3 +23,4 @@
 
     echo "This fork includes customizations for my specific setup."
     echo "See https://github.com/revans/bash-it for the original documentation."
+    echo "See http://commandlinefu.com for other cool commands you can add to your bash setup."
