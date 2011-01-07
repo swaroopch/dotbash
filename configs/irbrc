@@ -1,6 +1,9 @@
 
-require 'irb/completion'
-require 'irb/ext/save-history'
+# IRB history, file is present in Mac OS X Snow Leopard
+# http://stackoverflow.com/questions/2065923/irb-history-not-working/2066260#2066260
+if File.exists?("/etc/irbrc")
+    load("/etc/irbrc")
+end
 
 require 'rubygems'
 
