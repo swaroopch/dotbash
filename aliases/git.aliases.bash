@@ -10,7 +10,7 @@ alias gst='git status'
 alias gs='git status'
 alias gss='git status -s'
 alias gl='git pull'
-alias gup='git fetch && git rebase'
+alias gup='git checkout master && git fetch origin && git rebase -p origin/master'
 alias gp='git push'
 alias gpo='git push origin'
 alias gdv='git diff -w "$@" | vim -R -'
@@ -49,7 +49,7 @@ function git-help() {
   echo "  gst/gs  = git status"
   echo "  gss	  = git status -s"
   echo "  gl      = git pull"
-  echo "  gup     = git fetch && git rebase"
+  echo "  gup     = git checkout master && git fetch origin && git rebase -p origin/master"
   echo "  gp      = git push"
   echo "  gd      = git diff | vim -R -"
   echo "  gdv     = git diff -w \"$@\" | vim -R -"
