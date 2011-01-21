@@ -10,7 +10,6 @@ alias gst='git status'
 alias gs='git status'
 alias gss='git status -s'
 alias gl='git pull'
-alias gup='git checkout master && git fetch origin && git rebase -p origin/master'
 alias gp='git push'
 alias gpo='git push origin'
 alias gdv='git diff -w "$@" | vim -R -'
@@ -22,7 +21,20 @@ alias gcount='git shortlog -sn'
 alias gcp='git cherry-pick'
 alias gco='git checkout'
 alias gexport='git archive --format zip --output'
-alias gdel='git branch -D'
+alias gdel='git branch -d'
+
+
+## https://gist.github.com/590895
+## via http://notes.envato.com/developers/rebasing-merge-commits-in-git/
+function git_current_branch() {
+  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
+}
+
+alias gpthis='git push origin HEAD:$(git_current_branch)'
+alias grb='git rebase -p'
+alias gup='git fetch origin && grb origin/$(git_current_branch)'
+alias gm='git merge --no-ff'
+
 
 case $OSTYPE in
   linux*)
@@ -49,7 +61,6 @@ function git-help() {
   echo "  gst/gs  = git status"
   echo "  gss	  = git status -s"
   echo "  gl      = git pull"
-  echo "  gup     = git checkout master && git fetch origin && git rebase -p origin/master"
   echo "  gp      = git push"
   echo "  gd      = git diff | vim -R -"
   echo "  gdv     = git diff -w \"$@\" | vim -R -"
@@ -61,7 +72,11 @@ function git-help() {
   echo "  gcp     = git cherry-pick"
   echo "  gco     = git checkout"
   echo "  gexport = git git archive --format zip --output"
-	echo "  gdel    = git branch -D"
+	echo "  gdel    = git branch -d"
 	echo "  gpo     = git push origin"
+  echo "  gpthis = git push origin HEAD:<git_current_branch>"
+  echo "  grb = git rebase -p"
+  echo "  gup = git fetch origin && grb origin/<git_current_branch>"
+  echo "  gm = git merge --no-ff"
   echo
 }
