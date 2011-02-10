@@ -14,6 +14,7 @@ alias rd='rails destroy'
 alias ss='script/server'
 alias ts="thin start"     # thin server
 alias sc='script/console'
+alias sd='script/dbconsole -p'
 alias restartapp='touch tmp/restart.txt'
 alias restart='touch tmp/restart.txt'  # restart passenger
 alias devlog='tail -f log/development.log'
@@ -32,6 +33,7 @@ function rails-help() {
   echo "  rp          = rails plugin"
   echo "  ra          = rails application"
   echo "  rd          = rails destroy"
+  echo "  sd         = script/dbconsole -p"
   echo "  restartapp  = touch tmp/restart.txt"
   echo "  restart     = touch tmp/restart.txt"
   echo "  devlog      = tail -f log/development.log"
