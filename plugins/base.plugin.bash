@@ -2,6 +2,10 @@
 
 # For generic functions.
 
+function c {
+  cd "$@" && ls -G
+}
+
 function ips {
   ifconfig | grep "inet " | awk '{ print $2 }'
 }

@@ -13,7 +13,6 @@ then
 	alias ls="ls --color=always"
 fi
 
-alias c='clear'
 alias k='clear'
 
 alias edit="$EDITOR"
@@ -46,7 +45,7 @@ function aliases-help() {
   echo "  la     = ls -AF"
   echo "  ll     = ls -al"
   echo "  l      = ls -a"
-  echo "  c/k    = clear"
+  echo "  k      = clear"
   echo "  ..     = cd .."
   echo "  ...    = cd ../.."
   echo "  -      = cd -"

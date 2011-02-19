@@ -24,3 +24,8 @@
     echo "This fork includes customizations for my specific setup."
     echo "See https://github.com/revans/bash-it for the original documentation."
     echo "See http://commandlinefu.com for other cool commands you can add to your bash setup."
+
+# Also See
+
+- [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/)
+- [What `$*` and `$@` mean](http://tldp.org/LDP/abs/html/internalvariables.html#APPREF)
