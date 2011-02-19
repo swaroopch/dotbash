@@ -51,7 +51,7 @@ ln -s -i "$DOTBASH/configs/irbrc" ~/.irbrc
 ln -s -i "$DOTBASH/configs/gitconfig" ~/.gitconfig
 
 echo "Installing autojump"
-git clone git://github.com/joelthelion/autojump.git
+git submodule update --init --recursive
 cd autojump
 sudo bash "install.sh"
 
