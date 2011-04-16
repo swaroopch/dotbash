@@ -34,6 +34,7 @@ alias gpthis='git push origin HEAD:$(git_current_branch)'
 alias grb='git rebase -p'
 alias gup='git fetch origin && grb origin/$(git_current_branch)'
 alias gm='git merge --no-ff'
+alias gpush='gup && gpthis'
 
 
 case $OSTYPE in
@@ -78,5 +79,6 @@ function git-help() {
   echo "  grb     = git rebase -p"
   echo "  gup     = git fetch origin && grb origin/<git_current_branch>"
   echo "  gm      = git merge --no-ff"
+  echo "  gpush   = gup && gpthis"
   echo
 }
