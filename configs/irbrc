@@ -9,7 +9,7 @@ require 'rubygems'
 
 # https://github.com/michaeldv/awesome_print
 # gem install awesome_print
-require 'ap'
+require 'awesome_print'
 
 require 'wirble'
 Wirble.init
