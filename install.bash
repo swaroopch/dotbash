@@ -50,11 +50,6 @@ ln -s -i "$DOTBASH/configs/ackrc" ~/.ackrc
 ln -s -i "$DOTBASH/configs/irbrc" ~/.irbrc
 ln -s -i "$DOTBASH/configs/gitconfig" ~/.gitconfig
 
-echo "Installing autojump"
-git submodule update --init --recursive
-cd autojump
-sudo bash "install.sh"
-
 cd $DOTBASH
 
 ## XXX YOU MUST CHANGE THIS FOR YOUR OWN CUSTOM SETUP
