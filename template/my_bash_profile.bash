@@ -71,8 +71,10 @@ if [[ "$OS" == "mac" ]]
 then
     # brew doctor
     # http://mxcl.github.com/homebrew/
-    export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
+
+export PATH="$HOME/bin:$PATH"
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
