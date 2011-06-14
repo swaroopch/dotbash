@@ -3,7 +3,7 @@
 # For generic functions.
 
 function c {
-  cd "$@" && ls -G
+  cd "$@" && ls -G --color=always
 }
 
 function ips {
