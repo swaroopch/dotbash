@@ -1,6 +1,15 @@
 
 require 'rubygems' unless defined? Gem # rubygems is only needed in 1.8
-require 'irbtools'
+
+# https://github.com/michaeldv/awesome_print
+require 'awesome_print'
+
+require 'wirble'
+Wirble.init
+Wirble.colorize
+
+require 'hirb'
+Hirb.enable
 
 # IRB history, file is present in Mac OS X Snow Leopard
 # http://stackoverflow.com/questions/2065923/irb-history-not-working/2066260#2066260
