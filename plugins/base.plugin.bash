@@ -2,9 +2,16 @@
 
 # For generic functions.
 
-function c {
-  cd "$@" && ls -G --color=always
-}
+if [ $(uname) == "Linux" ]
+then
+    function c {
+        cd "$@" && ls -G --color=always
+    }
+else
+    function c {
+        cd "$@" && ls -G
+    }
+fi
 
 function ips {
   ifconfig | grep "inet " | awk '{ print $2 }'
