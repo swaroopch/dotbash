@@ -49,6 +49,7 @@ ln -s -i "$DOTBASH/configs/tmux.conf" ~/.tmux.conf
 ln -s -i "$DOTBASH/configs/ackrc" ~/.ackrc
 ln -s -i "$DOTBASH/configs/irbrc" ~/.irbrc
 ln -s -i "$DOTBASH/configs/gitconfig" ~/.gitconfig
+cp -i "$DOTBASH/configs/gemrc.yml" ~/.gemrc
 
 cd $DOTBASH
 
