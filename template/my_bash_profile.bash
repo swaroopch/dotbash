@@ -11,9 +11,11 @@ fi
 if [[ "$OSTYPE" == "darwin10.0" ]]
 then
     export OS="mac"
+    export GVIM="open -a MacVim"
 elif [[ "$OSTYPE" == "linux-gnu" ]]
 then
     export OS="linux"
+    export GVIM="gvim"
 else
     echo "Don't know what to do with '$OSTYPE' operating system"
     exit 1
