@@ -84,6 +84,12 @@ unset MAILCHECK
 ## Python
 [[ -s "$HOME/local/pyenv/bin/activate" ]] && source "$HOME/local/pyenv/bin/activate"
 
+# Virtualenvwrapper
+export WORKON_HOME="$HOME/local/virtualenvs"
+mkdir -p $WORKON_HOME
+# sudo pip install virtualenvwrapper
+[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
+
 ## Get Everything
 
 # Load Bash It
