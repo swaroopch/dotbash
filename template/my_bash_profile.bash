@@ -81,10 +81,7 @@ export PATH="$HOME/bin:$PATH"
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
-## Python
-[[ -s "$HOME/local/pyenv/bin/activate" ]] && source "$HOME/local/pyenv/bin/activate"
-
-# Virtualenvwrapper
+# Python - Virtualenvwrapper
 export WORKON_HOME="$HOME/local/virtualenvs"
 mkdir -p $WORKON_HOME
 # sudo pip install virtualenvwrapper
