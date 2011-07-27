@@ -17,26 +17,25 @@ do
   source $config_file
 done
 
-# Tab Completion
-COMPLETION="${BASH}/completion/*.bash"
-for config_file in $COMPLETION
+# Load enabled aliases, completion, plugins
+for file_type in "aliases" "completion" "plugins"
 do
-  source $config_file
+  if [ ! -d "${BASH}/${file_type}/enabled" ]
+  then
+    break
+  fi
+  FILES="${BASH}/${file_type}/enabled/*.bash"
+  for config_file in $FILES
+  do
+    source $config_file
+  done
 done
 
-# Plugins
-PLUGINS="${BASH}/plugins/*.bash"
-for config_file in $PLUGINS
-do
-  source $config_file
-done
-
-# Aliases
-FUNCTIONS="${BASH}/aliases/*.bash"
-for config_file in $FUNCTIONS
-do
-  source $config_file
-done
+# Load any custom aliases that the user has added
+if [ -e "${BASH}/aliases/custom.aliases.bash" ]
+then
+  source "${BASH}/aliases/custom.aliases.bash"
+fi
 
 # Custom
 CUSTOM="${BASH}/custom/*.bash"
@@ -47,13 +46,21 @@ done
 
 
 unset config_file
-export PS1=$PROMPT
-
+if [[ $PROMPT ]]; then
+    export PS1=$PROMPT
+fi
 
 # Adding Support for other OSes
 PREVIEW="less"
 [ -s /usr/bin/gloobus-preview ] && PREVIEW="gloobus-preview"
 [ -s /Applications/Preview.app ] && PREVIEW="/Applications/Preview.app"
+
+# Load all the Jekyll stuff
+
+if [ -e $HOME/.jekyllconfig ]
+then
+  . $HOME/.jekyllconfig
+fi
 
 
 #
@@ -67,6 +74,7 @@ function bash-it() {
   echo "  rails-help                  This will list out all the aliases you can use with rails."
   echo "  git-help                    This will list out all the aliases you can use with git."
   echo "  todo-help                   This will list out all the aliases you can use with todo.txt-cli"
+  echo "  brew-help                   This will list out all the aliases you can use with Homebrew"
   echo "  aliases-help                Generic list of aliases."
   echo "  plugins-help                This will list out all the plugins and functions you can use with bash-it"
   echo

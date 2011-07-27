@@ -26,18 +26,6 @@ export NGINX_PATH='/opt/nginx'
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
-# Change this to the path of your local jekyll root to use the jekyll aliases
-
-export JEKYLL_LOCAL_ROOT="$HOME/Sites/jekyllsite"
-
-# And change this to the remote server and root
-
-export JEKYLL_REMOTE_ROOT="user@server:/path/to/jekyll/root"
-
-# And, for the last of the jekyll variables, this is the formatting you use, eg: markdown,
-# textile, etc. Basically whatever you use as the extension for posts, without the preceding dot
-
-export JEKYLL_FORMATTING="markdown"
 
 # Change this to your console based IRC client of choice.
 
@@ -46,6 +34,10 @@ export IRC_CLIENT='irssi'
 # Set this to the command you use for todo.txt-cli
 
 export TODO="t"
+
+# Set vcprompt executable path for scm advance info in prompt (demula theme)
+# https://github.com/xvzf/vcprompt
+#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
 # Load Bash It
 source $BASH/bash_it.sh
