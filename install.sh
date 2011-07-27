@@ -42,7 +42,7 @@ cp $HOME/.bash_profile $HOME/.bash_profile.bak
 
 echo "Your original .bash_profile has been backed up to .bash_profile.bak"
 
-cp $BASH/template/bash_profile.template.bash $HOME/.bash_profile
+cp $BASH/template/my_bash_profile.bash $HOME/.bash_profile
 
 echo "Copied the template .bash_profile into ~/.bash_profile, edit this file to customize dotbash"
 
@@ -141,7 +141,7 @@ then
         mkdir -p "$BASH_CUSTOM/.."
         cd "$BASH_CUSTOM/.."
         # XXX THIS IS MY PRIVATE REPO. YOU CANNOT ACCESS THIS.
-        git clone git@github.com:swaroopch/BASH_custom.git
+        git clone git@github.com:swaroopch/dotbash_custom.git
     else
         cd $BASH
         git pull
