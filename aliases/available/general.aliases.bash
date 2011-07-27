@@ -15,7 +15,6 @@ then
 	alias ls="ls --color=always"
 fi
 
-alias c='clear'
 alias k='clear'
 alias cls='clear'
 
@@ -45,6 +44,9 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 # Directory
 alias	md='mkdir -p'
 alias	rd=rmdir
+
+# Vim
+alias v='vim'
 
 function aliases-help() {
   echo "Generic Alias Usage"

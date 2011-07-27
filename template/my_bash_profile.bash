@@ -36,14 +36,7 @@ else
 fi
 
 ## Python
-
-# VirtualEnv
-#export VIRTUALENV_USE_DISTRIBUTE=1
-#export VIRTUAL_ENV_DISABLE_PROMPT=1
-# sudo apt-get install python-distribute
-# sudo easy_install virtualenv==tip
-# cd $HOME/local && virtualenv pyenv
-#[[ -s "$HOME/local/pyenv/bin/activate" ]] && source "$HOME/local/pyenv/bin/activate"
+export VIRTUALENV_USE_DISTRIBUTE=1
 
 ## Ruby
 
