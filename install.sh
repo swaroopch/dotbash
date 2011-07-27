@@ -42,7 +42,7 @@ cp $HOME/.bash_profile $HOME/.bash_profile.bak
 
 echo "Your original .bash_profile has been backed up to .bash_profile.bak"
 
-cp $BASH/template/my_bash_profile.bash $HOME/.bash_profile
+ln -s -i $BASH/template/my_bash_profile.bash $HOME/.bash_profile
 
 echo "Copied the template .bash_profile into ~/.bash_profile, edit this file to customize dotbash"
 
