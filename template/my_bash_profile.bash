@@ -37,13 +37,12 @@ fi
 
 ## Python
 export VIRTUALENV_USE_DISTRIBUTE=1
+export WORKON_HOME="$HOME/local/virtualenvs"
+mkdir -p $WORKON_HOME
+[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
 
 ## Ruby
-
-# Load RVM, if you are using it
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-
-# Add rvm gems to the path
 export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
 
 ## Bash
@@ -74,12 +73,6 @@ export PATH="$HOME/bin:$PATH"
 # Don't check mail when opening terminal.
 unset MAILCHECK
 
-# Python - Virtualenvwrapper
-export WORKON_HOME="$HOME/local/virtualenvs"
-mkdir -p $WORKON_HOME
-# sudo pip install virtualenvwrapper
-[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
-
 ## Get Everything
 
 # Load Bash It
@@ -88,14 +81,6 @@ then
     source $BASH/bash_it.sh
 fi
 
-# Load Autojump, but by default, the installer adds to the bashrc, so we do not need to load it again.
-#AUTOJUMP_SCRIPT="/etc/profile.d/autojump.bash"
-#if [[ -d "$AUTOJUMP_SCRIPT" ]]
-#then
-    #source "$AUTOJUMP_SCRIPT"
-#fi
-
 ## Cleanup
 
-unset AUTOJUMP_SCRIPT
 unset OS
