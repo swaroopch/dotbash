@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-BASH="$HOME/.bash_it"
+BASH="$HOME/code/dotbash"
 cd $BASH
 
 ## Check Bash Version
