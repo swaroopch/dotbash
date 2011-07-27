@@ -1,3 +1,7 @@
+# Dotbash
+
+Dotbash is a customization of "Bash it" by [Swaroop C H](https://github.com/swaroopch).
+
 # Bash it
 
 **Bash it** is a mash up of my own bash commands and scripts, other bash stuff I have found. 
@@ -8,8 +12,8 @@ Includes autocompletion, themes, aliases, custom functions, a few stolen pieces 
 
 ## Install
 
-1. Check a clone of this repo: `git clone http://github.com/revans/bash-it.git ~/.bash_it`
-2. Run `~/.bash_it/install.sh` (it automatically backs up your `~/.bash_profile`)
+1. Check a clone of this repo: `git clone http://github.com/swaroopch/dotbash.git ~/code/dotbash`
+2. Run `~/code/dotbash/install.sh` (it automatically backs up your `~/.bash_profile`)
 3. Edit your `~/.bash_profile` file in order to customize bash-it.
 
 **NOTE:**
