@@ -7,7 +7,7 @@
 export PATH=$PATH:~/.gem/ruby/1.8/bin:/opt/nginx/sbin
 
 # Path to the bash it configuration
-export BASH=$HOME/.bash_it
+export BASH=$HOME/code/dotbash
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
