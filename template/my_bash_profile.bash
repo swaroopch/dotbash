@@ -52,7 +52,7 @@ export BASH=$HOME/code/dotbash
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_THEME='pete'
+export BASH_THEME='my'
 
 ## Git
 
