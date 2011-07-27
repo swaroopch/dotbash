@@ -42,9 +42,9 @@ cp $HOME/.bash_profile $HOME/.bash_profile.bak
 
 echo "Your original .bash_profile has been backed up to .bash_profile.bak"
 
-cp $HOME/.bash_it/template/bash_profile.template.bash $HOME/.bash_profile
+cp $BASH/template/bash_profile.template.bash $HOME/.bash_profile
 
-echo "Copied the template .bash_profile into ~/.bash_profile, edit this file to customize bash-it"
+echo "Copied the template .bash_profile into ~/.bash_profile, edit this file to customize dotbash"
 
 echo "Setting up application-specific configs"
 ln -s -i "$BASH/configs/tmux.conf" ~/.tmux.conf
@@ -60,8 +60,8 @@ do
   case $RESP
     in
     [yY])
-      cp $HOME/.bash_it/template/jekyllconfig.template.bash $HOME/.jekyllconfig
-      echo "Copied the template .jekyllconfig into your home directory. Edit this file to customize bash-it for using the Jekyll plugins"
+      cp $BASH/template/jekyllconfig.template.bash $HOME/.jekyllconfig
+      echo "Copied the template .jekyllconfig into your home directory. Edit this file to customize dotbash for using the Jekyll plugins"
       break
       ;;
     [nN])
