@@ -1,5 +1,42 @@
 #!/usr/bin/env bash
 BASH="$HOME/.bash_it"
+cd $BASH
+
+## Check Bash Version
+
+if [ "$BASH_VERSION" = "" ]
+then
+    echo "I work only with Bash"
+    exit 1
+fi
+
+## Check Git is installed
+if [[ $(which git) == "" ]]
+then
+    echo "Please ensure that git is installed"
+    exit 1
+fi
+
+## Check OS
+
+if [[ "$OSTYPE" == "darwin10.0" ]]
+then
+    export OS="mac"
+elif [[ "$OSTYPE" == "linux-gnu" ]]
+then
+    export OS="linux"
+else
+    echo "Don't know what to do with '$OSTYPE' operating system"
+    exit 1
+fi
+
+# Select correct user profile script
+if [[ "$OS" == "mac" ]]
+then
+    PROFILE="$HOME/.profile"
+else
+    PROFILE="$HOME/.bashrc"
+fi
 
 cp $HOME/.bash_profile $HOME/.bash_profile.bak
 
@@ -8,6 +45,13 @@ echo "Your original .bash_profile has been backed up to .bash_profile.bak"
 cp $HOME/.bash_it/template/bash_profile.template.bash $HOME/.bash_profile
 
 echo "Copied the template .bash_profile into ~/.bash_profile, edit this file to customize bash-it"
+
+echo "Setting up application-specific configs"
+ln -s -i "$BASH/configs/tmux.conf" ~/.tmux.conf
+ln -s -i "$BASH/configs/ackrc" ~/.ackrc
+ln -s -i "$BASH/configs/irbrc" ~/.irbrc
+ln -s -i "$BASH/configs/gitconfig" ~/.gitconfig
+cp -i "$BASH/configs/gemrc.yml" ~/.gemrc
 
 while true
 do
@@ -86,3 +130,25 @@ do
     esac
   done
 done
+
+## XXX YOU MUST CHANGE THIS FOR YOUR OWN CUSTOM SETUP
+if [[ "$CUSTOM" == "yes" ]]
+then
+    BASH_CUSTOM="$HOME/code/dotbash_custom"
+
+    if [[ ! -d "$BASH_CUSTOM" ]]
+    then
+        mkdir -p "$BASH_CUSTOM/.."
+        cd "$BASH_CUSTOM/.."
+        # XXX THIS IS MY PRIVATE REPO. YOU CANNOT ACCESS THIS.
+        git clone git@github.com:swaroopch/BASH_custom.git
+    else
+        cd $BASH
+        git pull
+    fi
+
+    echo "Setting up custom configs"
+    bash "$BASH_CUSTOM/install.sh"
+fi
+
+echo "Finished. Open a new shell now!"
