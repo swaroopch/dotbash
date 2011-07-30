@@ -5,11 +5,11 @@
 if [ $(uname) == "Linux" ]
 then
     function c {
-        cd "$@" && ls -G --color=always
+        cd "$@" && ls -G -F --color=always
     }
 else
     function c {
-        cd "$@" && ls -G
+        cd "$@" && ls -G -F
     }
 fi
 
