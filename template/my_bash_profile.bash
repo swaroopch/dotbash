@@ -26,8 +26,10 @@ fi
 # Set my editor and git editor
 if [[ "$OS" == "mac" ]]
 then
+    # brew uninstall macvim
     # brew install --head macvim
-    # cp -r /usr/local/Cellar/macvim/HEAD/MacVim.app /Applications/
+    # rm -rf /Applications/MacVim.app
+    # cp -r /usr/local/Cellar/macvim/*/MacVim.app /Applications
     ## 1. Using MacVim makes copy/paste work from within Terminal
     ## 2. Using compiled MacVim enables ruby, python Vim-scripting
     export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim'
