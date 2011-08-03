@@ -1,3 +1,3 @@
 #!/bin/bash
 
-alias v='vim'
+alias v='vim -c NERDTree'

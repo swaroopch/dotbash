@@ -45,9 +45,6 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias	md='mkdir -p'
 alias	rd=rmdir
 
-# Vim
-alias v='vim'
-
 function aliases-help() {
   echo "Generic Alias Usage"
   echo
