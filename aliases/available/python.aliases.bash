@@ -2,3 +2,4 @@
 
 alias p='bpython'
 
+alias clear_pyc="find . -iname '*.pyc' -exec rm -v {} \;"
