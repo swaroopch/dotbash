@@ -151,4 +151,26 @@ then
     bash "$BASH_CUSTOM/install.sh"
 fi
 
+## Python
+source $HOME/.bash_profile
+if [[ "$WORKON_HOME" != "" ]]
+then
+    if [[ $(type mkvirtualenv | head -1) =~ "is a function" ]] && [[ $(type workon | head -1) =~ "is a function" ]]
+    then
+        if [[ ! -d "$WORKON_HOME/default" ]]
+        then
+            mkvirtualenv default
+        fi
+
+        workon default
+
+        if [[ $(which pyflakes) == "" ]]
+        then
+            pip install pyflakes
+        fi
+    else
+        echo "Optional: virtualenvwrapper is not installed, so please install that, then create 'default' virtualenv and install pyflakes"
+    fi
+fi
+
 echo "Finished. Open a new shell now!"
