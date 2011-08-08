@@ -30,14 +30,6 @@ else
     exit 1
 fi
 
-# Select correct user profile script
-if [[ "$OS" == "mac" ]]
-then
-    PROFILE="$HOME/.profile"
-else
-    PROFILE="$HOME/.bashrc"
-fi
-
 cp $HOME/.bash_profile $HOME/.bash_profile.bak
 
 echo "Your original .bash_profile has been backed up to .bash_profile.bak"
