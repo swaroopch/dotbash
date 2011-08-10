@@ -37,9 +37,9 @@ for f in $(ls -a $BASH_BACKUP_DIR| grep -v '^.$' | grep -v '^..$')
 do
     rm -rf "$BASH_BACKUP_DIR/$f"
 done
-for f in "$HOME/.bash_profile" "$HOME/.tmux.conf" "$HOME/.ackrc" "$HOME/.irbrc" "$HOME/.gitconifg" "$HOME/.gemrc"
+for f in "$HOME/.bash_profile" "$HOME/.tmux.conf" "$HOME/.ackrc" "$HOME/.irbrc" "$HOME/.gitconfig" "$HOME/.gemrc"
 do
-    mv -vf $f $BASH_BACKUP_DIR
+    mv -f $f $BASH_BACKUP_DIR
 done
 
 echo "Linking the template .bash_profile into ~/.bash_profile, edit this file to customize dotbash"
