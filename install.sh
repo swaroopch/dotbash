@@ -30,9 +30,9 @@ else
     exit 1
 fi
 
-echo "Backup existing bash and config files"
 export BASH_BACKUP_DIR="/tmp/dotbash-backup"
 mkdir -p $BASH_BACKUP_DIR
+echo "Backing up existing bash and config files to $BASH_BACKUP_DIR"
 for f in $(ls -a $BASH_BACKUP_DIR| grep -v '^.$' | grep -v '^..$')
 do
     rm -rf "$BASH_BACKUP_DIR/$f"
