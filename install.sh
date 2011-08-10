@@ -30,20 +30,27 @@ else
     exit 1
 fi
 
-cp $HOME/.bash_profile $HOME/.bash_profile.bak
+echo "Backup existing bash and config files"
+export BASH_BACKUP_DIR="/tmp/dotbash-backup"
+mkdir -p $BASH_BACKUP_DIR
+for f in $(ls -a $BASH_BACKUP_DIR| grep -v '^.$' | grep -v '^..$')
+do
+    rm -rf "$BASH_BACKUP_DIR/$f"
+done
+for f in "$HOME/.bash_profile" "$HOME/.tmux.conf" "$HOME/.ackrc" "$HOME/.irbrc" "$HOME/.gitconifg" "$HOME/.gemrc"
+do
+    mv -vf $f $BASH_BACKUP_DIR
+done
 
-echo "Your original .bash_profile has been backed up to .bash_profile.bak"
-
-ln -s -i $BASH/template/my_bash_profile.bash $HOME/.bash_profile
-
-echo "Copied the template .bash_profile into ~/.bash_profile, edit this file to customize dotbash"
+echo "Linking the template .bash_profile into ~/.bash_profile, edit this file to customize dotbash"
+ln -s -f $BASH/template/my_bash_profile.bash $HOME/.bash_profile
 
 echo "Setting up application-specific configs"
-ln -s -i "$BASH/configs/tmux.conf" ~/.tmux.conf
-ln -s -i "$BASH/configs/ackrc" ~/.ackrc
-ln -s -i "$BASH/configs/irbrc" ~/.irbrc
-ln -s -i "$BASH/configs/gitconfig" ~/.gitconfig
-cp -i "$BASH/configs/gemrc.yml" ~/.gemrc
+ln -s -f "$BASH/configs/tmux.conf" "$HOME/.tmux.conf"
+ln -s -f "$BASH/configs/ackrc" "$HOME/.ackrc"
+ln -s -f "$BASH/configs/irbrc" "$HOME/.irbrc"
+ln -s -f "$BASH/configs/gitconfig" "$HOME/.gitconfig"
+cp -f    "$BASH/configs/gemrc.yml" "$HOME/.gemrc"
 
 function load_all() {
   file_type=$1
