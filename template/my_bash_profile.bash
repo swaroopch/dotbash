@@ -60,11 +60,6 @@ export BASH=$HOME/code/dotbash
 # location /.bash_it/themes/
 export BASH_THEME='my'
 
-## Git
-
-# Your place for hosting Git repos. I use this for private repos.
-export GIT_HOSTING='git@github.com:swaroopch'
-
 ## System
 
 if [[ "$OS" == "mac" ]]
