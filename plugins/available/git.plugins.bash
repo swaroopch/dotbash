@@ -93,3 +93,7 @@ else
 fi
 }
 
+# Example: "github_clone swaroopch/dotbash"
+function github_clone {
+    git clone git://github.com/$*.git
+}
