@@ -46,7 +46,6 @@ mkdir -p $WORKON_HOME
 
 ## Ruby
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
 
 ## Haskell
 [[ -s $HOME/.cabal/bin ]] && export PATH=$HOME/.cabal/bin:$PATH
