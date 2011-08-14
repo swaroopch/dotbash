@@ -83,26 +83,22 @@ then
     bash "$BASH_CUSTOM/install.sh"
 fi
 
-## Python
 source $HOME/.bash_profile
-if [[ "$WORKON_HOME" != "" ]]
+
+## Python
+if [[ $(type workon) =~ "not found" ]]
 then
-    if [[ $(type mkvirtualenv | head -1) =~ "is a function" ]] && [[ $(type workon | head -1) =~ "is a function" ]]
-    then
-        if [[ ! -d "$WORKON_HOME/default" ]]
-        then
-            mkvirtualenv default
-        fi
+    curl -k -O http://python-distribute.org/distribute_setup.py
+    sudo python distribute_setup.py
+    rm distribute_setup.py
+    rm -f distribute*.tar.gz
 
-        workon default
+    curl -k -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+    sudo python get-pip.py
+    rm get-pip.py
 
-        if [[ $(which pyflakes) == "" ]]
-        then
-            pip install pyflakes
-        fi
-    else
-        echo "Optional: virtualenvwrapper is not installed, so please install that, then create 'default' virtualenv and install pyflakes"
-    fi
+    sudo pip install -U virtualenv virtualenvwrapper
+    [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
 fi
 
 echo "Finished. Open a new shell now!"
