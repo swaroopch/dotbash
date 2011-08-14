@@ -43,6 +43,11 @@ export VIRTUALENV_USE_DISTRIBUTE=1
 export WORKON_HOME="$HOME/local/virtualenvs"
 mkdir -p $WORKON_HOME
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
+if [[ ! -d "$WORKON_HOME/default" ]]
+then
+    mkvirtualenv default
+fi
+workon default
 
 ## Ruby
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
