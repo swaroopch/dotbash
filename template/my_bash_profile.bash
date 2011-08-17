@@ -43,7 +43,7 @@ export VIRTUALENV_USE_DISTRIBUTE=1
 export WORKON_HOME="$HOME/local/virtualenvs"
 mkdir -p $WORKON_HOME
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
-if [[ $(type workon | head -1) =~ "is a function" ]]
+if [[ $(type workon 2>&1 | head -1) =~ "is a function" ]]
 then
     if [[ ! -d "$WORKON_HOME/default" ]]
     then
