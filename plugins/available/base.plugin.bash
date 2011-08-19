@@ -26,6 +26,19 @@ function myip {
   echo "Your public IP is: ${bold_green} $res ${normal}"
 }
 
+function check_port {
+  port_number=$1
+  shift
+
+  if [[ "$port_number" == "" ]]
+  then
+    echo "Usage: check_port <port number>"
+    return 1
+  fi
+
+  lsof -i -n -P | fgrep $port_number
+}
+
 # Function for previewing markdown files in the browser
 
 function pmdown() {
