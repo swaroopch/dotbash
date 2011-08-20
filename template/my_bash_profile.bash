@@ -41,6 +41,7 @@ fi
 ## Python
 export VIRTUALENV_USE_DISTRIBUTE=1
 export WORKON_HOME="$HOME/local/virtualenvs"
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
 mkdir -p $WORKON_HOME
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
 if [[ $(type workon 2>&1 | head -1) =~ "is a function" ]]
