@@ -70,13 +70,6 @@ export BASH_THEME='my'
 
 ## System
 
-if [[ "$OS" == "mac" ]]
-then
-    # brew doctor
-    # http://mxcl.github.com/homebrew/
-    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-fi
-
 export PATH="$HOME/bin:$PATH"
 
 # Don't check mail when opening terminal.
@@ -88,6 +81,14 @@ unset MAILCHECK
 if [[ "$TERM" != "dumb" ]] # To prevent tput errors when someone scps to this box
 then
     source $BASH/bash_it.sh
+fi
+
+# Homebrew
+if [[ "$OS" == "mac" ]]
+then
+    # brew doctor
+    # http://mxcl.github.com/homebrew/
+    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
 
 ## Cleanup
