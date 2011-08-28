@@ -24,5 +24,5 @@ function egg_edit
 
     module_directory=$(dirname $module_file)
     cd $module_directory
-    v
+    v -c NERDTree
 }
