@@ -25,17 +25,9 @@ function 6run
 
     name=${filename%.go}
 
-    6g "${name}.go"
-    if [[ $? != 0 ]]
-    then
-        return $?
-    fi
+    6g "${name}.go" || return $?
 
-    6l -o "${name}" "${name}.6"
-    if [[ $? != 0 ]]
-    then
-        return $?
-    fi
+    6l -o "${name}" "${name}.6" || return $?
 
     ./${name}
 }
