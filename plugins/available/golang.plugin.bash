@@ -1,4 +1,15 @@
 
+# Set GOROOT
+if [[ "$OS" == "mac" ]]
+then
+    export GOROOT=$(brew info go | tail -2 | head -1 | awk '{print $1}')
+
+    if [[ ! -d "$GOROOT" ]]
+    then
+        unset GOROOT
+    fi
+fi
+
 # Shortcut to compile Golang programs
 # http://golang.org/doc/go_tutorial.html#tmp_41
 function 6run
