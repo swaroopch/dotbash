@@ -6,6 +6,12 @@ function 6run
     filename=$1
     shift
 
+    if [[ "$filename" == "" ]]
+    then
+        echo "Usage: 6run foo.go"
+        return 1
+    fi
+
     name=${filename%.go}
 
     6g "${name}.go"
