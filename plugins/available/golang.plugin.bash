@@ -2,11 +2,11 @@
 # Set GOROOT
 if [[ "$OS" == "mac" ]]
 then
-    export GOROOT=$(brew info go | tail -2 | head -1 | awk '{print $1}')
+    GR=$(brew info go | tail -2 | head -1 | awk '{print $1}')
 
-    if [[ ! -d "$GOROOT" ]]
+    if [[ -d "$GR" ]]
     then
-        unset GOROOT
+        export GOROOT=$GR
     fi
 fi
 
@@ -24,6 +24,11 @@ function 6run
     fi
 
     name=${filename%.go}
+
+    for dep in $@
+    do
+        6g $dep || return $?
+    done
 
     6g "${name}.go" || return $?
 
