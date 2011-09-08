@@ -1,4 +1,4 @@
 #--pager=less -r
--i
+#-i
 --sort-files
 --color
