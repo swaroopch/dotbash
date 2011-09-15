@@ -36,7 +36,7 @@ function check_port {
     return 1
   fi
 
-  lsof -i -n -P | fgrep $port_number
+  sudo lsof -i -n -P | fgrep $port_number
 }
 
 # Function for previewing markdown files in the browser
