@@ -44,6 +44,16 @@ done
 
 echo "Linking the template .bash_profile into ~/.bash_profile, edit this file to customize dotbash"
 ln -s -f $BASH/template/my_bash_profile.bash $HOME/.bash_profile
+if [[ "$OS" == "linux" ]]
+then
+
+    cat >> $HOME/.bashrc <<EOF
+
+source \$HOME/.bash_profile
+
+EOF
+
+fi
 
 echo "Setting up application-specific configs"
 ln -s -f "$BASH/configs/tmux.conf" "$HOME/.tmux.conf"
