@@ -12,6 +12,7 @@ alias gss='git status -s'
 alias gl='git pull'
 alias gp='git push'
 alias gpo='git push origin'
+alias gph='git push heroku master'
 alias gdv='git diff -w "$@" | vim -R -'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
@@ -77,6 +78,7 @@ function git-help() {
   echo "  gexport = git git archive --format zip --output"
   echo "  gdel    = git branch -d"
   echo "  gpo     = git push origin"
+  echo "  gph     = git push heroku master"
   echo "  gmu     = git fetch origin -v; git fetch upstream -v; git merge upstream/master"
   echo "  gll     = git log --graph --pretty=oneline --abbrev-commit"
   echo "  grb     = git rebase -p"
