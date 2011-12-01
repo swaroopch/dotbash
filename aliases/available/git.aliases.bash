@@ -17,6 +17,7 @@ alias gdv='git diff -w "$@" | vim -R -'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gce='git commit --allow-empty-message -m ""'
+alias gcb='git add . && git commit --allow-empty-message -m ""'
 alias gci='git commit --interactive'
 alias gb='git branch'
 alias gba='git branch -a'
@@ -69,7 +70,8 @@ function git-help() {
   echo "  gd      = git diff | vim -R -"
   echo "  gdv     = git diff -w \"$@\" | vim -R -"
   echo "  gc      = git commit -v"
-  echo "  gce     = git commit --allow-empty-message ''"
+  echo "  gce     = git commit --allow-empty-message -m ''"
+  echo "  gcb     = git add . && git commit --allow-empty-message -m ''"
   echo "  gca     = git commit -v -a"
   echo "  gci 	  = git commit --interactive"
   echo "  gb      = git branch"
