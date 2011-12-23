@@ -41,7 +41,7 @@ for f in "$HOME/.bash_profile" "$HOME/.tmux.conf" "$HOME/.ackrc" "$HOME/.irbrc" 
 do
     if [[ -f "$f" ]]
     then
-        mv -f $f $bash_backup_dir
+        mv -f $f $BASH_BACKUP_DIR
     fi
 done
 
