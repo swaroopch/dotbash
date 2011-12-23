@@ -39,7 +39,10 @@ do
 done
 for f in "$HOME/.bash_profile" "$HOME/.tmux.conf" "$HOME/.ackrc" "$HOME/.irbrc" "$HOME/.gitconfig" "$HOME/.gemrc"
 do
-    mv -f $f $BASH_BACKUP_DIR
+    if [[ -f "$f" ]]
+    then
+        mv -f $f $bash_backup_dir
+    fi
 done
 
 echo "Linking the template .bash_profile into ~/.bash_profile, edit this file to customize dotbash"
