@@ -99,19 +99,19 @@ fi
 source $HOME/.bash_profile
 
 ## Python
-if [[ $(type workon) =~ "not found" ]]
-then
-    curl -k -O http://python-distribute.org/distribute_setup.py
-    sudo python distribute_setup.py
-    rm distribute_setup.py
-    rm -f distribute*.tar.gz
+#if [[ $(type workon) =~ "not found" ]]
+#then
+    #curl -k -O http://python-distribute.org/distribute_setup.py
+    #sudo python distribute_setup.py
+    #rm distribute_setup.py
+    #rm -f distribute*.tar.gz
 
-    curl -k -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
-    sudo python get-pip.py
-    rm get-pip.py
+    #curl -k -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+    #sudo python get-pip.py
+    #rm get-pip.py
 
-    sudo pip install -U virtualenv virtualenvwrapper
-    [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
-fi
+    #sudo pip install -U virtualenv virtualenvwrapper
+    #[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
+#fi
 
 echo "Finished. Open a new shell now!"
