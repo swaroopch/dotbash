@@ -61,9 +61,9 @@ fi
 
 ## Ruby
 ### Use RBENV if present
-[[ -s $HOME/.rbenv ]] && export PATH=$HOME/.rbenv/bin:$PATH && eval "$(rbenv init -)" && export RBENV_PRESENT=1
+[[ -s $HOME/.rbenv ]] && export PATH=$HOME/.rbenv/bin:$PATH && eval "$(rbenv init -)"
 ### Use RVM if present, only if RBENV not present
-[[ "$RBENV_PRESENT" == "" ]] && [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+#[[ "$RBENV_PRESENT" == "" ]] && [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 ## Haskell
 [[ -s $HOME/.cabal/bin ]] && export PATH=$HOME/.cabal/bin:$PATH
