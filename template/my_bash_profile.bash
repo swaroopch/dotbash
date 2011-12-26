@@ -11,7 +11,7 @@ then
     exit 1
 fi
 
-if [[ "$OSTYPE" == "darwin10.0" ]]
+if [[ "$OSTYPE" == "darwin10.0" || "$OSTYPE" == "darwin11" ]]
 then
     export OS="mac"
     export GVIM="open -a MacVim"
