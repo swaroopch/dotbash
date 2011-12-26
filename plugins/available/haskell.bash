@@ -1,2 +1,2 @@
 
-export PATH="$HOME/.cabal/bin:$PATH"
+[[ -s $HOME/.cabal/bin ]] && export PATH=$HOME/.cabal/bin:$PATH
