@@ -95,6 +95,12 @@ then
     # brew doctor
     # http://mxcl.github.com/homebrew/
     export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+    # Ruby bin (because `brew install ruby` installs latest 1.9.3-p0 (as of this writing) and Mac OS X Lion has Ruby 1.8.7)
+    if [[ "$(brew list | grep '^ruby$')" != "" ]]
+    then
+        export PATH="$(brew --prefix ruby)/bin:$PATH"
+    fi
 fi
 
 ## Cleanup
