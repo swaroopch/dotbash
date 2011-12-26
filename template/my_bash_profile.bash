@@ -76,7 +76,7 @@ export BASH_THEME='my'
 
 ## System
 
-export PATH="$HOME/bin:$PATH"
+[[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
