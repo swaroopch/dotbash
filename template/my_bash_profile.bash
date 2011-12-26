@@ -61,9 +61,18 @@ fi
 
 ## Ruby
 ### Use RBENV if present
-[[ -s $HOME/.rbenv ]] && export PATH=$HOME/.rbenv/bin:$PATH && eval "$(rbenv init -)"
-### Use RVM if present, only if RBENV not present
-#[[ "$RBENV_PRESENT" == "" ]] && [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+if [[ -s $HOME/.rbenv ]]
+then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+else
+    if [[ -d "/var/lib/gems/1.8/bin" ]]
+    then
+        export PATH="/var/lib/gems/1.8/bin:$PATH"
+    fi
+fi
+### Else use RVM
+#[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 ## Bash
 
