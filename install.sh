@@ -62,7 +62,7 @@ echo "Setting up application-specific configs"
 ln -s -i "$BASH/configs/tmux.conf" "$HOME/.tmux.conf"
 ln -s -i "$BASH/configs/ackrc" "$HOME/.ackrc"
 ln -s -i "$BASH/configs/irbrc" "$HOME/.irbrc"
-ln -s -i "$BASH/configs/gitconfig" "$HOME/.gitconfig"
+cp    -i "$BASH/configs/gitconfig" "$HOME/.gitconfig"
 cp    -i "$BASH/configs/gemrc.yml" "$HOME/.gemrc"
 
 function load_all() {
