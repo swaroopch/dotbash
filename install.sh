@@ -19,7 +19,7 @@ fi
 
 ## Check OS
 
-if [[ "$OSTYPE" == "darwin10.0" || "$OSTYPE" == "darwin11" ]]
+if [[ "$OSTYPE" =~ "darwin" ]]
 then
     export OS="mac"
 elif [[ "$OSTYPE" == "linux-gnu" ]]
