@@ -41,7 +41,7 @@ for f in "$HOME/.bash_profile" "$HOME/.tmux.conf" "$HOME/.ackrc" "$HOME/.irbrc" 
 do
     if [[ -f "$f" ]]
     then
-        mv -f $f $BASH_BACKUP_DIR
+        cp -vf $f $BASH_BACKUP_DIR
     fi
 done
 
@@ -59,11 +59,11 @@ EOF
 fi
 
 echo "Setting up application-specific configs"
-ln -s -f "$BASH/configs/tmux.conf" "$HOME/.tmux.conf"
-ln -s -f "$BASH/configs/ackrc" "$HOME/.ackrc"
-ln -s -f "$BASH/configs/irbrc" "$HOME/.irbrc"
-ln -s -f "$BASH/configs/gitconfig" "$HOME/.gitconfig"
-cp -f    "$BASH/configs/gemrc.yml" "$HOME/.gemrc"
+ln -s -i "$BASH/configs/tmux.conf" "$HOME/.tmux.conf"
+ln -s -i "$BASH/configs/ackrc" "$HOME/.ackrc"
+ln -s -i "$BASH/configs/irbrc" "$HOME/.irbrc"
+ln -s -i "$BASH/configs/gitconfig" "$HOME/.gitconfig"
+cp    -i "$BASH/configs/gemrc.yml" "$HOME/.gemrc"
 
 function load_all() {
   file_type=$1
