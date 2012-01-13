@@ -66,11 +66,11 @@ function venv {
         return 1
     fi
 
-    if [[ -d "$VIRTUALENV_HOME/$name" ]]
+    if [[ ! -d "$VIRTUALENV_HOME/$name" ]]
     then
-        source $VIRTUALENV_HOME/$name/bin/activate
-    else
         echo "$name environment does not exist. Run 'venvmake $name' first."
         return 1
     fi
+
+    source $VIRTUALENV_HOME/$name/bin/activate
 }
