@@ -39,9 +39,9 @@ else
 fi
 
 ## Python
+export VIRTUALENV_USE_DISTRIBUTE=1
 #if [[ "$USER" == "$MY_USER_NAME" ]] # NOTE https://bitbucket.org/dhellmann/virtualenvwrapper/issue/62/hooklog-permissions#comment-231449
 #then
-    #export VIRTUALENV_USE_DISTRIBUTE=1
     #export WORKON_HOME="$HOME/local/virtualenvs"
     #export PIP_VIRTUALENV_BASE=$WORKON_HOME
     #mkdir -p $WORKON_HOME
