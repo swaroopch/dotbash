@@ -2,10 +2,10 @@
     whitespace = nowarn
     pager = less
 [user]
-    name = Swaroop C H
-    email = swaroop@swaroopch.com
+    name =
+    email =
 [github]
-    user = swaroopch
+    user =
 [color]
     diff = auto
     status = auto

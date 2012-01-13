@@ -1,8 +1,5 @@
 #!/bin/bash
 
-## Settings
-MY_USER_NAME='swaroop'
-
 ## Shell and OS check
 
 if [ "$BASH_VERSION" = "" ]
