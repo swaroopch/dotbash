@@ -40,6 +40,8 @@ fi
 
 ## Python
 export VIRTUALENV_USE_DISTRIBUTE=1
+## http://jacobian.org/writing/when-pypi-goes-down/
+export PIP_USE_MIRRORS=1
 #if [[ "$USER" == "$MY_USER_NAME" ]] # NOTE https://bitbucket.org/dhellmann/virtualenvwrapper/issue/62/hooklog-permissions#comment-231449
 #then
     #export WORKON_HOME="$HOME/local/virtualenvs"
