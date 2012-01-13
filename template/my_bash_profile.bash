@@ -42,21 +42,6 @@ fi
 export VIRTUALENV_USE_DISTRIBUTE=1
 ## http://jacobian.org/writing/when-pypi-goes-down/
 export PIP_USE_MIRRORS=1
-#if [[ "$USER" == "$MY_USER_NAME" ]] # NOTE https://bitbucket.org/dhellmann/virtualenvwrapper/issue/62/hooklog-permissions#comment-231449
-#then
-    #export WORKON_HOME="$HOME/local/virtualenvs"
-    #export PIP_VIRTUALENV_BASE=$WORKON_HOME
-    #mkdir -p $WORKON_HOME
-    #[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
-    #if [[ $(type workon 2>&1 | head -1) =~ "is a function" ]]
-    #then
-        #if [[ ! -d "$WORKON_HOME/default" ]]
-        #then
-            #mkvirtualenv default
-        #fi
-        #workon default
-    #fi
-#fi
 
 ## Ruby
 ### Use RBENV if present
