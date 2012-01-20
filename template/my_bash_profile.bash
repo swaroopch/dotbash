@@ -67,15 +67,6 @@ export BASH=$HOME/code/dotbash
 # location /.bash_it/themes/
 export BASH_THEME='my'
 
-## System
-
-[[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
-
-# Don't check mail when opening terminal.
-unset MAILCHECK
-
-## Get Everything
-
 # Load Bash It
 if [[ "$TERM" != "dumb" ]] # To prevent tput errors when someone scps to this box
 then
@@ -87,7 +78,18 @@ if [[ "$OS" == "mac" ]]
 then
     # brew doctor
     # http://mxcl.github.com/homebrew/
+    export PATH="${PATH/\/usr\/local\/bin:?/}"  # Remove directory from PATH
+    export PATH="${PATH/\/usr\/local\/sbin:?/}" # Remove directory from PATH
+    # Add to the head of the PATH
     export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+    ## This is needed when I have already set a 'venv' and I start tmux -
+    ## The prompt shows the venv name but the PATHs are not actually set
+    ## and the default 'python' is the system-wide default python.
+    if [[ "$VIRTUAL_ENV" != "" ]]
+    then
+        source "$VIRTUAL_ENV/bin/activate"
+    fi
 
     # Ruby bin (because `brew install ruby` installs latest 1.9.3-p0 (as of this writing) and Mac OS X Lion has Ruby 1.8.7)
     if [[ "$(brew list | grep '^ruby$')" != "" ]]
@@ -96,6 +98,13 @@ then
     fi
 fi
 
+## System
+
+[[ -d "$HOME/bin" ]] && export PATH="$HOME/bin:$PATH"
+
 ## Cleanup
+
+# Don't check mail when opening terminal.
+unset MAILCHECK
 
 #unset OS
