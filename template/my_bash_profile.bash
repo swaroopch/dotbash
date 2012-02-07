@@ -78,8 +78,8 @@ if [[ "$OS" == "mac" ]]
 then
     # brew doctor
     # http://mxcl.github.com/homebrew/
-    export PATH="${PATH/\/usr\/local\/bin:?/}"  # Remove directory from PATH
-    export PATH="${PATH/\/usr\/local\/sbin:?/}" # Remove directory from PATH
+    export PATH="${PATH/\/usr\/local\/bin:/}"  # Remove directory from PATH
+    export PATH="${PATH/\/usr\/local\/sbin:/}" # Remove directory from PATH
     # Add to the head of the PATH
     export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
