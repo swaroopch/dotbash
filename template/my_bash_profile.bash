@@ -42,6 +42,13 @@ fi
 export VIRTUALENV_USE_DISTRIBUTE=1
 ## http://jacobian.org/writing/when-pypi-goes-down/
 export PIP_USE_MIRRORS=1
+## This is needed when I have already set a 'venv' and I start tmux -
+## The prompt shows the venv name but the PATHs are not actually set
+## and the default 'python' is the system-wide default python.
+if [[ "$VIRTUAL_ENV" != "" ]]
+then
+    source "$VIRTUAL_ENV/bin/activate"
+fi
 
 ## Ruby
 ### Use RBENV if present
@@ -82,14 +89,6 @@ then
     export PATH="${PATH/\/usr\/local\/sbin:/}" # Remove directory from PATH
     # Add to the head of the PATH
     export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
-    ## This is needed when I have already set a 'venv' and I start tmux -
-    ## The prompt shows the venv name but the PATHs are not actually set
-    ## and the default 'python' is the system-wide default python.
-    if [[ "$VIRTUAL_ENV" != "" ]]
-    then
-        source "$VIRTUAL_ENV/bin/activate"
-    fi
 
     # Ruby bin (because `brew install ruby` installs latest 1.9.3-p0 (as of this writing) and Mac OS X Lion has Ruby 1.8.7)
     if [[ "$(brew list | grep '^ruby$')" != "" ]]
