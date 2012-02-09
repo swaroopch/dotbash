@@ -23,7 +23,20 @@ function down4me() {
 
 function myip {
   res=$(curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+')
-  echo "Your public IP is: ${bold_green} $res ${normal}"
+  echo -e "Your public IP is: ${echo_bold_green} $res ${echo_normal}"
+}
+
+pass() {
+  which gshuf &> /dev/null
+  if [ $? -eq 1 ]
+  then
+    echo "Error: shuf isn't installed!"
+    return 1
+  fi
+
+  pass=$(shuf -n4 /usr/share/dict/words | tr '\n' ' ')
+  echo "With spaces (easier to memorize): $pass"
+  echo "Without (use this as the pass): $(echo $pass | tr -d ' ')"
 }
 
 function check_port {
