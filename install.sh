@@ -76,6 +76,9 @@ do
     load_all $type
 done
 
+## WORKAROUND This was doing some funky stuff with the command prompt when using iTerm2 on Mac OS X Lion
+rm -f "${BASH_IT}/plugins/enabled/xterm.plugins.bash"
+
 source $HOME/.bash_profile
 
 echo "Finished. Open a new shell now!"
