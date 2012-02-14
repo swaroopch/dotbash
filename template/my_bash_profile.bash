@@ -89,6 +89,7 @@ export PIP_USE_MIRRORS=1
 if [[ "$VIRTUAL_ENV" != "" ]]
 then
     source "$VIRTUAL_ENV/bin/activate"
+    prepend_path "$VIRTUAL_ENV/bin"
 fi
 
 ## Ruby
