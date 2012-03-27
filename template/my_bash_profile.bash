@@ -73,10 +73,10 @@ then
     prepend_path "/usr/local/bin"
 
     # Ruby bin (because `brew install ruby` installs latest 1.9.3-p0 (as of this writing) and Mac OS X Lion has Ruby 1.8.7)
-    #if [[ "$(brew list | grep '^ruby$')" != "" ]]
-    #then
-        #prepend_path "$(brew --prefix ruby)/bin"
-    #fi
+    if [[ "$(brew list | grep '^ruby$')" != "" ]]
+    then
+        prepend_path "$(brew --prefix ruby)/bin"
+    fi
 fi
 
 ## Python
