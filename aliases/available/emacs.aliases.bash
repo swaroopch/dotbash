@@ -7,5 +7,6 @@ case $OSTYPE in
     ;;
   darwin*)
     alias em="open -a emacs"
+    alias e="emacs"
     ;;
 esac
