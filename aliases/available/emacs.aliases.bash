@@ -7,6 +7,7 @@ case $OSTYPE in
     ;;
   darwin*)
     alias em="open -a emacs"
-    alias e="emacs"
+    # http://emacsformacosx.com/
+    alias e="open -a /Applications/Emacs.app/Contents/MacOS/Emacs"
     ;;
 esac
