@@ -104,8 +104,8 @@ else
         prepend_path "/var/lib/gems/1.8/bin"
     fi
 fi
-## Else use RVM
-#[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+# Else use RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 ## System
 
