@@ -107,6 +107,12 @@ fi
 # Else use RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# Linux and Ruby
+if [[ "$OS" == "linux" ]]
+then
+    prepend_path "$GEM_PATH"
+fi
+
 ## System
 
 [[ -d "$HOME/bin" ]] && prepend_path "$HOME/bin"
