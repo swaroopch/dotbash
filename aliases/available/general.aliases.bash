@@ -54,6 +54,9 @@ fi
 alias	md='mkdir -p'
 alias	rd=rmdir
 
+# Clipboard
+alias xclip='xclip -selection c'
+
 function aliases-help() {
 echo "Generic Alias Usage"
 echo
@@ -77,5 +80,6 @@ echo "  irc     = $IRC_CLIENT"
 echo "  md      = mkdir -p"
 echo "  rd      = rmdir"
 echo "  rb      = ruby"
+echo "  xclip   = xclip -selection c"
 echo
 }
