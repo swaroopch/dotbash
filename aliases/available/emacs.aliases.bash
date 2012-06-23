@@ -3,7 +3,8 @@
 case $OSTYPE in
   linux*)
     alias em='emacs'
-    alias e='emacsclient -n'
+    # alias e='emacsclient -n'
+    alias e='emacs -nw'
     ;;
   darwin*)
     alias em="open -a emacs"
