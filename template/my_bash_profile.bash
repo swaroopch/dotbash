@@ -53,7 +53,7 @@ fi
 ## Bash
 
 # Path to the bash it configuration
-export BASH=$HOME/code/dotbash
+export BASH=$HOME/.bash_it
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -112,6 +112,12 @@ if [[ "$OS" == "linux" ]]
 then
     prepend_path "$GEM_PATH"
 fi
+
+## Java
+export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
+export PATH="/opt/apache-ant-1.8.4/bin:/opt/apache-maven-3.0.4/bin:$PATH"
+export CLASSPATH="/opt/apache-ant-1.8.4/lib:/opt/apache-maven-3.0.4/:lib:$CLASSPATH"
+export PATH="$HOME/bin:$HOME/bin/pycharm/bin:$HOME/bin/intellij-idea/bin:$PATH"
 
 ## System
 
