@@ -1,4 +1,5 @@
-#!/bin/bash
+cite about-alias
+about-alias 'general aliases'
 
 # List directory contents
 alias sl=ls
@@ -20,66 +21,40 @@ then
   alias shuf=gshuf
 fi
 
+alias c='clear'
 alias k='clear'
 alias cls='clear'
 
 alias edit="$EDITOR"
 alias pager="$PAGER"
 
-alias q="exit"
+alias q='exit'
 
 alias irc="$IRC_CLIENT"
 
-alias rb="ruby"
+alias rb='ruby'
 
 # Pianobar can be found here: http://github.com/PromyLOPh/pianobar/
 
-alias piano="pianobar"
+alias piano='pianobar'
 
 alias ..='cd ..'         # Go up one directory
 alias ...='cd ../..'     # Go up two directories
 alias ....='cd ../../..' # Go up two directories
-alias -- -="cd -"        # Go back
+alias -- -='cd -'        # Go back
 
 # Shell History
 alias h='history'
 
 # Tree
-if [ ! -x "$(which tree)" ]
+if [ ! -x "$(which tree 2>/dev/null)" ]
 then
   alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 fi
 
 # Directory
 alias	md='mkdir -p'
-alias	rd=rmdir
+alias	rd='rmdir'
 
 # Clipboard
 alias xclip='xclip -selection c'
-
-function aliases-help() {
-echo "Generic Alias Usage"
-echo
-echo "  sl      = ls"
-echo "  ls      = ls -G"
-echo "  la      = ls -AF"
-echo "  ll      = ls -al"
-echo "  l       = ls -a"
-echo "  c/k/cls = clear"
-echo "  ..      = cd .."
-echo "  ...     = cd ../.."
-echo "  -       = cd -"
-echo "  h       = history"
-echo "  md      = mkdir -p"
-echo "  rd      = rmdir"
-echo "  editor  = $EDITOR"
-echo "  pager   = $PAGER"
-echo "  piano   = pianobar"
-echo "  q       = exit"
-echo "  irc     = $IRC_CLIENT"
-echo "  md      = mkdir -p"
-echo "  rd      = rmdir"
-echo "  rb      = ruby"
-echo "  xclip   = xclip -selection c"
-echo
-}

@@ -1,4 +1,5 @@
-#!/bin/bash
+cite 'about-alias'
+about-alias 'textmate abbreviations'
 
 case $OSTYPE in
   darwin*)

@@ -1,4 +1,5 @@
-#!/bin/bash
+cite about-plugin
+about-plugin 'alias "http" to SimpleHTTPServer'
 
 if [ $(uname) = "Linux" ]
 then

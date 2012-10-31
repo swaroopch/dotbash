@@ -1,11 +1,10 @@
-#!/bin/bash
+# Load rbebv, if you are using it
 
-if [[ -d "$HOME/.rbenv" ]]
-then
-    # Load rbenv, if you are using it
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
+cite about-plugin
+about-plugin 'load rbenv, if you are using it'
 
-    # Load the auto-completion script if rbenv was loaded.
-    source "$HOME/.rbenv/completions/rbenv.bash"
-fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+[[ `which rbenv` ]] && eval "$(rbenv init -)"
+
+# Load the auto-completion script if rbenv was loaded.
+[[ -e ~/.rbenv/completions/rbenv.bash ]] && source ~/.rbenv/completions/rbenv.bash

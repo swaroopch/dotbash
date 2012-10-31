@@ -1,6 +1,9 @@
+cite about-plugin
+about-plugin 'Node.js helper functions'
 
-# https://github.com/mxcl/homebrew/blob/master/Library/Formula/node.rb#L39
-if [ "$OS" == "mac" ]
-then
-    export NODE_PATH="$(brew --prefix)/lib/node_modules"
-fi
+export PATH=./node_modules/.bin:$PATH
+
+# Make sure the global npm prefix is on the path
+[[ `which npm` ]] && export PATH=$(npm config get prefix)/bin:$PATH
+
+

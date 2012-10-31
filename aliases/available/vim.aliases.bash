@@ -1,4 +1,5 @@
-#!/bin/bash
+cite 'about-alias'
+about-alias 'vim abbreviations'
 
-#alias v='vim -c "NERDTree" -c "wincmd l"'
+alias v='mvim --remote-tab'
 alias v='vim'

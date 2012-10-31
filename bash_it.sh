@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Initialize Bash It
 
 # Reload Library
@@ -21,6 +21,12 @@ then
     unset $BASH_THEME;
 fi
 
+# Load composure first, so we support function metadata
+source "${BASH_IT}/lib/composure.sh"
+
+# support 'plumbing' metadata
+cite _about _param _example _group _author _version
+
 # Load colors first so they can be use in base theme
 source "${BASH_IT}/themes/colors.theme.bash"
 source "${BASH_IT}/themes/base.theme.bash"
@@ -35,17 +41,7 @@ done
 # Load enabled aliases, completion, plugins
 for file_type in "aliases" "completion" "plugins"
 do
-  if [ ! -d "${BASH_IT}/${file_type}/enabled" ]
-  then
-    continue
-  fi
-  FILES="${BASH_IT}/${file_type}/enabled/*.bash"
-  for config_file in $FILES
-  do
-    if [ -e "${config_file}" ]; then
-      source $config_file
-    fi
-  done
+  _load_bash_it_files $file_type
 done
 
 # Load any custom aliases that the user has added
@@ -79,21 +75,3 @@ if [ -e $HOME/.jekyllconfig ]
 then
   . $HOME/.jekyllconfig
 fi
-
-
-#
-# Custom Help
-
-function bash-it() {
-  echo "Welcome to Bash It!"
-  echo
-  echo "Here is a list of commands you can use to get help screens for specific pieces of Bash it:"
-  echo
-  echo "  rails-help                  This will list out all the aliases you can use with rails."
-  echo "  git-help                    This will list out all the aliases you can use with git."
-  echo "  todo-help                   This will list out all the aliases you can use with todo.txt-cli"
-  echo "  brew-help                   This will list out all the aliases you can use with Homebrew"
-  echo "  aliases-help                Generic list of aliases."
-  echo "  plugins-help                This will list out all the plugins and functions you can use with bash-it"
-  echo
-}

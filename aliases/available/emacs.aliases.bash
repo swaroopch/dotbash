@@ -1,14 +1,13 @@
-#!/bin/bash
+
+cite 'about-alias'
+about-alias 'emacs editor'
 
 case $OSTYPE in
   linux*)
     alias em='emacs'
-    # alias e='emacsclient -n'
-    alias e='emacs -nw'
+    alias e='emacsclient -n'
     ;;
   darwin*)
-    alias em="open -a emacs"
-    # http://emacsformacosx.com/
-    alias e="open -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+    alias em='open -a emacs'
     ;;
 esac
